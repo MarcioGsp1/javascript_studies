@@ -660,3 +660,169 @@ checkWinner($scoreDolphins, $scoreKoalas);
 /* $scoreDolphins = calcAverage(85, 54, 41);
 $scoreKoalas = calcAverage(23, 34, 27);
  */
+
+
+///////////////////////////////////
+// Introduction to Arrays
+
+const friend1 = 'Michael';
+const friend2 = 'Steven';
+const friend3 = 'Peter';
+
+const friends = ['Michael', 'Steven', 'Peter'];
+console.log(friends);
+
+const y = new Array(1991, 1984, 2008, 2020);
+
+console.log(friends[0]);
+console.log(friends[2]);
+
+console.log(friends.length);
+console.log(friends[friends.length - 1]);
+
+friends[2] = 'Jay';
+console.log(friends);
+// friends = ['Bob', 'Alice']
+
+const first_Name = 'Márcio';
+const marcio_data = [first_Name, 'Silva', 2023 - 1998, 'developer', friends];
+console.log(marcio_data);
+console.log(marcio_data.length);
+
+// Exercise
+const calc_Age = function (birthYeah) {
+  return 2023 - birthYeah;
+}
+const years = [1990, 1967, 2002, 2010, 2018];
+
+const age_1 = calc_Age(years[0]);
+const age_2 = calc_Age(years[1]);
+const age_3 = calc_Age(years[years.length - 1]);
+console.log(age_1, age_2, age_3);
+
+const ages = [calc_Age(years[0]), calc_Age(years[1]), calc_Age(years[years.length - 1])];
+console.log(ages);
+
+
+///////////////////////////////////////
+// Basic Array Operations (Methods)
+const friends = ['Michael', 'Steven', 'Peter'];
+
+// Add elements
+const newLength = friends.push('Jay');
+console.log(friends);
+console.log(newLength);
+
+friends.unshift('John');
+console.log(friends);
+
+// Remove elements
+friends.pop(); // Last
+const popped = friends.pop();
+console.log(popped);
+console.log(friends);
+
+friends.shift(); // First
+console.log(friends);
+
+console.log(friends.indexOf('Steven'));
+console.log(friends.indexOf('Bob'));
+
+friends.push(23);
+console.log(friends.includes('Steven'));
+console.log(friends.includes('Bob'));
+console.log(friends.includes(23));
+
+if (friends.includes('Steven')) {
+  console.log('You have a friend called Steven');
+}
+
+
+///////////////////////////////////////
+// Coding Challenge #2
+
+/*
+Steven is still building his tip calculator, using the same rules as before: Tip 15% of the bill if the bill value is between 50 and 300, and if the value is different, the tip is 20%.
+
+1. Write a function 'calcTip' that takes any bill value as an input and returns the corresponding tip, calculated based on the rules above (you can check out the code from first tip calculator challenge if you need to). Use the function type you like the most. Test the function using a bill value of 100.
+2. And now let's use arrays! So create an array 'bills' containing the test data below.
+3. Create an array 'tips' containing the tip value for each bill, calculated from the function you created before.
+4. BONUS: Create an array 'total' containing the total values, so the bill + tip.
+
+TEST DATA: 125, 555 and 44
+
+HINT: Remember that an array needs a value in each position, and that value can actually be the returned value of a function! So you can just call a function as array values (so don't store the tip values in separate variables first, but right in the new array) 
+
+
+*/
+
+
+
+const calcTip = bill => bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+
+/* const calcTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+} */
+
+const bills = [125, 555, 44];
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+
+console.log('bills: ' + bills + ' tips: ' + tips + ' totals: ' + totals);
+
+
+///////////////////////////////////////
+// Introduction to Objects
+const marcioArray = [
+  'Márcio',
+  'Silva',
+  2023 - 1998,
+  'developer',
+  ['Michael', 'Peter', 'Steven']
+];
+
+const _marcio = {
+  firstName: 'Márcio',
+  lastName: 'Silva',
+  age: 2023 - 1998,
+  job: 'developer',
+  friends: ['Michael', 'Peter', 'Steven']
+};
+
+
+///////////////////////////////////////
+// Dot vs. Bracket Notation
+const $marcio = {
+  firstName: 'Márcio',
+  lastName: 'Silva',
+  age: 2023 - 1998,
+  job: 'developer',
+  friends: ['Michael', 'Peter', 'Steven']
+};
+//console.log($marcio);
+
+console.log($marcio.lastName);
+console.log($marcio['lastName']);
+
+const nameKey = 'Name';
+console.log($marcio['first' + nameKey]);
+console.log($marcio['last' + nameKey]);
+
+// console.log($marcio.'last' + nameKey)
+
+const interestedIn = prompt('What do you want to know about Márcio? Choose between firstName, lastName, age, job, and friends');
+
+if ($marcio[interestedIn]) {
+  console.log($marcio[interestedIn]);
+}else {
+  console.log('Wrong request! Choose between firstName, lastName, age, job, and friends');
+}
+
+$marcio.location = 'Brasil';
+$marcio['Github'] = 'MarcioGsp1';
+console.log($marcio);
+
+// Challenge
+// "Márcio has 3 friends, and his best friend is called Michael"
+console.log(`${$marcio.firstName} has ${$marcio.friends.length} friends, and his best friend is called ${$marcio.friends[0]}`);
+
