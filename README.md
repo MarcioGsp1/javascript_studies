@@ -14,6 +14,7 @@ Decidi criar este repo com a intenção de compartilhar a minha evolução nessa
 <br>
 
 - The Complete JavaScript Course by <a href="https://github.com/jonasschmedtmann">Jonas Schmedtmann</a>  
+- JavaScript: O Guia Definitivo, de David Flanagan
 - MDN Docs
 - ChatGPT, obviamente 🗿🍷
 
