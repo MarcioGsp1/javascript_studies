@@ -1076,6 +1076,8 @@ const $tips = [];
 const $totals = [];
 
 for (let i = 0; i < $bills.length; i++) {
+  //console.log(i);
+  //break;
   const tip = calcTip1($bills[i]);
   $tips.push(tip);
   $totals.push(tip + $bills[i]);
