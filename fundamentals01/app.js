@@ -862,32 +862,8 @@ console.log(marcio1.age);
 console.log(marcio1.age);
 console.log(marcio1.age); */
 
-<<<<<<< HEAD
- 
-///////////////////////////////////////
-// Iteration: The for Loop
-
-// console.log('Lifting weights repetition 1 🏋️‍♀️');
-// console.log('Lifting weights repetition 2 🏋️‍♀️');
-// console.log('Lifting weights repetition 3 🏋️‍♀️');
-// console.log('Lifting weights repetition 4 🏋️‍♀️');
-// console.log('Lifting weights repetition 5 🏋️‍♀️');
-// console.log('Lifting weights repetition 6 🏋️‍♀️');
-// console.log('Lifting weights repetition 7 🏋️‍♀️');
-// console.log('Lifting weights repetition 8 🏋️‍♀️');
-// console.log('Lifting weights repetition 9 🏋️‍♀️');
-// console.log('Lifting weights repetition 10 🏋️‍♀️');
-
-// for loop keeps running while condition is TRUE
-for (let rep = 1; rep <= 30; rep++) {
-  console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`);
-=======
-
-
-
 ///////////////////////////////////////
 // Coding Challenge #7
-
 
 /* 
 Let's go back to Mark and John comparing their BMIs! This time, let's use objects to implement the calculations! Remember: BMI = mass / height ** 2 = mass / (height * height). (mass in kg and height in meter)
@@ -937,5 +913,105 @@ if (mark.bmi > john.bmi) {
       mark.fullname
     }'s (${Math.floor(mark.calcBMI())})!`
   );
->>>>>>> 89c159bfffe3f3cc05da8239dcfc635ef09f562c
+}
+
+///////////////////////////////////////
+// Iteration: The for Loop
+
+// console.log('Lifting weights repetition 1 🏋️‍♀️');
+// console.log('Lifting weights repetition 2 🏋️‍♀️');
+// console.log('Lifting weights repetition 3 🏋️‍♀️');
+// console.log('Lifting weights repetition 4 🏋️‍♀️');
+// console.log('Lifting weights repetition 5 🏋️‍♀️');
+// console.log('Lifting weights repetition 6 🏋️‍♀️');
+// console.log('Lifting weights repetition 7 🏋️‍♀️');
+// console.log('Lifting weights repetition 8 🏋️‍♀️');
+// console.log('Lifting weights repetition 9 🏋️‍♀️');
+// console.log('Lifting weights repetition 10 🏋️‍♀️');
+
+// for loop keeps running while condition is TRUE
+for (let rep = 1; rep <= 30; rep++) {
+  console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`);
+}
+
+////////////////////////////////////////////
+//Looping Arrays, Breaking and Continuing
+///////////////////////////////////////////
+
+const marcioArray1 = [
+  "Márcio",
+  "Silva",
+  2023 - 1998,
+  "developer",
+  ["Jonas", "Peter", "Steven"],
+  true,
+];
+const types = [];
+//console.log(marcioArray1[0])
+//console.log(marcioArray1[1])
+//console.log(marcioArray1[4])
+// marcioArray1[5] does NOT exist
+for (let i = 0; i < marcioArray1.length; i++) {
+  // Reading from jonas array
+  console.log(marcioArray1[i], typeof marcioArray1[i]);
+  // Filling types array
+  types[i] = typeof marcioArray1[i];
+  types.push(typeof marcioArray1[i]);
+}
+console.log(types);
+
+/* const $years = [1991, 2007, 1969, 2020];
+const $ages = [];
+for (let i = 0; i < $years.length; i++) {
+  $ages.push(2023 - $years[i]);
+}
+console.log($ages); */
+
+
+
+/* const marcioArray1 = [
+  "Márcio",
+  "Silva",
+  "developer",
+  2023 - 1998
+  ["Jonas", "Peter", "Steven"],
+  true,
+];
+ */
+// continue and break
+console.log("--- ONLY STRINGS ---");
+for (let i = 0; i < marcioArray1.length; i++) {
+  if (typeof marcioArray1[i] !== "string") continue;
+  console.log(marcioArray1[i], typeof marcioArray1[i]);
+}
+console.log("--- BREAK WITH NUMBER ---");
+for (let i = 0; i < marcioArray1.length; i++) {
+  if (typeof marcioArray1[i] === "number") break;
+  console.log(marcioArray1[i], typeof marcioArray1[i]);
+}
+
+///////////////////////////////////////
+// Looping Backwards and Loops in Loops
+const marcioArray2 = [
+  "Márcio",
+  "Silva",
+  2023 - 1998,
+  "rockstar",
+  ["Jonas", "Peter", "Steven"],
+  false,
+];
+
+// 0, 1, ..., 4
+// 4, 3, ..., 0
+
+for (let i = marcioArray2.length - 1; i >= 0; i--) {
+  console.log(i, marcioArray2[i]);
+}
+
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`-------- Starting exercise ${exercise}`);
+
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(`Exercise ${exercise}: Lifting weight repetition ${rep} 🏋️‍♀️`);
+  }
 }
