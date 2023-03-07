@@ -967,8 +967,6 @@ for (let i = 0; i < $years.length; i++) {
 }
 console.log($ages); */
 
-
-
 /* const marcioArray1 = [
   "Márcio",
   "Silva",
@@ -978,6 +976,7 @@ console.log($ages); */
   true,
 ];
  */
+
 // continue and break
 console.log("--- ONLY STRINGS ---");
 for (let i = 0; i < marcioArray1.length; i++) {
@@ -1015,3 +1014,34 @@ for (let exercise = 1; exercise < 4; exercise++) {
     console.log(`Exercise ${exercise}: Lifting weight repetition ${rep} 🏋️‍♀️`);
   }
 }
+
+///////////////////////////////////////
+// The while Loop
+
+/* for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`);
+} */
+
+let rep = 1;
+while (rep <= 10) {
+  // console.log(`WHILE: Lifting weights repetition ${rep} 🏋️‍♀️`);
+  rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log("Loop is about to end...");
+}
+
+/* A condição de um loop while é avaliada antes da execução do bloco de código. Isso significa que, se a condição for falsa na primeira avaliação, o bloco nunca será executado.
+
+    O bloco de código dentro do while deve alterar a condição de alguma forma, caso contrário, o loop nunca terminará. É comum usar uma variável de controle para isso, como no exemplo anterior.
+
+    Se a condição do while for sempre verdadeira, o loop continuará sendo executado indefinidamente. Isso é conhecido como um loop infinito e pode travar o navegador ou o computador.
+
+    É possível usar o comando break dentro do bloco do while para interromper o loop imediatamente, mesmo se a condição ainda for verdadeira. Isso é útil para sair do loop antecipadamente em caso de alguma condição especial.
+
+    O loop while é uma estrutura de repetição muito útil em JavaScript, mas é importante usá-lo com cuidado para evitar problemas como loops infinitos ou loops que nunca são executados. É sempre uma boa prática testar sua condição com valores extremos para garantir que o loop se comporte corretamente em todas as situações possíveis. */
