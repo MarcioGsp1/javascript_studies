@@ -36,8 +36,25 @@ document.querySelector(".check").addEventListener("click", () => {
     document.querySelector("body").style.backgroundColor = " #60b347";
     document.querySelector("number").style.width = "30rem";
 
-    //when guess is too high
-  } else if (guess > secretNumber) {
+    if (score > highscore) {
+      highscore = score;
+
+      document.querySelector("highscore").textContent = highscore;
+    }
+
+    //when guess is too high or too low
+  } else if (guess !== secretNumber) {
+    document.querySelector(".message").textContent =
+      guess > secretNumber ? "Too high!" : "Too low!";
+    score--;
+    document.querySelector(".score").textContent = score;
+
+    if (score <= 0) {
+      document.querySelector(".message").textContent = "GAME OVER!";
+    }
+  } /* 
+   //when guess is too high
+  else if (guess > secretNumber) {
     document.querySelector(".message").textContent = "Too high!";
     score--;
     document.querySelector(".score").textContent = score;
@@ -55,7 +72,7 @@ document.querySelector(".check").addEventListener("click", () => {
     if (score <= 0) {
       document.querySelector(".message").textContent = "GAME OVER!";
     }
-  }
+  } */
 });
 
 document.querySelector(".again").addEventListener("click", function () {
