@@ -18,7 +18,13 @@ const closeModal = function () {
 for (let i = 0; i < btnsOpenModal.length; i++)
   btnsOpenModal[i].addEventListener("click", openModal);
 
-  
 /*Aqui não chamamos a função como normalmente fazemos. ex: closeModal(). Desse modo, a função seria imediatamente chamada assim que o javascript fosse executado. Neste caso a função só será chamada quando um desses eventos acontecer.*/
 btnCloseModal.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
+
+document.addEventListener("keydown", function (e) {
+  console.log(e.key);
+
+  if (e.key === "Escape" && !modal.classList.contains("hidden"));
+  closeModal();
+});
